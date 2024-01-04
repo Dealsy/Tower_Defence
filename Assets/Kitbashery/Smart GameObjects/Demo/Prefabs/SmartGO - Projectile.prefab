@@ -1,0 +1,785 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2251034409582434749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4787049032632320079}
+  - component: {fileID: 3334982180219659076}
+  - component: {fileID: 97775827628910618}
+  - component: {fileID: 3269714328964953838}
+  - component: {fileID: 4787049032632320076}
+  - component: {fileID: 4526707522804049572}
+  m_Layer: 0
+  m_Name: SmartGO - Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4787049032632320079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251034409582434749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3334982180219659076
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251034409582434749}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &97775827628910618
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251034409582434749}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2fff9053b5f5c45499cefb86b77e6462, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3269714328964953838
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251034409582434749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4787049032632320076
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251034409582434749}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4526707522804049572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251034409582434749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3432580f4fd2242a6379821dc22185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 4787049032632320079}
+  behaviors:
+  - enabled: 1
+    name: Projectile Hit
+    conditions:
+    - conditionType: 1
+      weight: 1
+      numericalComparison: 0
+      componentFloat: 1
+      componentFloat2: 0
+      customValue: 0
+      customValue2: 0
+      booleanComparison: 0
+      componentBoolean: 46
+      componentBoolean2: 0
+      variableName: 
+      variableName2: 
+      variableID: 0
+      variableID2: 0
+    weightThreshold: 1
+    actions:
+    - actionType: 2
+      actionIndex: 0
+      variableID: 371857150
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 9
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    - actionType: 0
+      actionIndex: 117
+      variableID: 0
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    - actionType: 0
+      actionIndex: 77
+      variableID: 0
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    fallbackActions:
+    - actionType: 2
+      actionIndex: 0
+      variableID: 371857150
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 9
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 1
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    delaying: 0
+  - enabled: 1
+    name: Move Projectile
+    conditions:
+    - conditionType: 1
+      weight: 1
+      numericalComparison: 0
+      componentFloat: 1
+      componentFloat2: 0
+      customValue: 0
+      customValue2: 0
+      booleanComparison: 0
+      componentBoolean: 9
+      componentBoolean2: 1
+      variableName: 
+      variableName2: 
+      variableID: 0
+      variableID2: 0
+    weightThreshold: 1
+    actions:
+    - actionType: 0
+      actionIndex: 115
+      variableID: 0
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 500
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    fallbackActions: []
+    delaying: 0
+  - enabled: 1
+    name: Time Decay
+    conditions:
+    - conditionType: 0
+      weight: 1
+      numericalComparison: 3
+      componentFloat: 1
+      componentFloat2: 0
+      customValue: 0
+      customValue2: 5
+      booleanComparison: 0
+      componentBoolean: 0
+      componentBoolean2: 0
+      variableName: lifetime
+      variableName2: 
+      variableID: -830534321
+      variableID2: 0
+    weightThreshold: 1
+    actions:
+    - actionType: 2
+      actionIndex: 0
+      variableID: 371857150
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 9
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    - actionType: 0
+      actionIndex: 117
+      variableID: 0
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    - actionType: 1
+      actionIndex: 0
+      variableID: -830534321
+      variableName: lifetime
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    - actionType: 0
+      actionIndex: 77
+      variableID: 0
+      variableName: 
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 0
+      numericalOperator: 0
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 0
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    fallbackActions:
+    - actionType: 1
+      actionIndex: 0
+      variableID: -830534321
+      variableName: lifetime
+      componentFloat: 1
+      componentBoolean: 2
+      customValue: 0
+      numericalOperator: 4
+      booleanComparison: 0
+      customValue2: 0
+      componentBoolean2: 0
+      variableName2: 
+      componentFloat2: 75
+      variableID2: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customVector: {x: 0, y: 0, z: 0}
+    delaying: 0
+  currentWeight: 0
+  floatVariables:
+  - name: lifetime
+    initialValue: 0
+    hash: 0
+  booleanVariables: []
+  focusTarget: {fileID: 0}
+  targets: []
+  lastTargeted: {fileID: 0}
+  nearestTarget: {fileID: 0}
+  farthestTarget: {fileID: 0}
+  rigid: {fileID: 0}
+  col: {fileID: 0}
+  isTrigger: 1
+  maxCollisions: 50
+  requiredTags: []
+  ignoredColliders: []
+  colliders: []
+  lastContact: {fileID: 0}
+  onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  rayCount: 1
+  maxRayDistance: 1000
+  raySpacing: 1
+  verticalScatter: 45
+  horizontalScatter: 45
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  triggerInteraction: 1
+  agent: {fileID: 0}
+  animator: {fileID: 0}
+  splines: []
+  path: []
+  useLocalSpace: 0
+  useFocusTargetPath: 0
+  usePath: 0
+  lookAtPath: 0
+  pathCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  translationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  translationTarget: {x: 0, y: 0, z: 0}
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationTarget: {x: 0, y: 0, z: 0, w: 1}
+  spin: 0
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleTarget: {x: 1, y: 1, z: 1}
+  snappyScale: 0
+  lookAtTarget: {fileID: 0}
+  horizontalLook: 0
+  directLook: 1
+  audioSrc: {fileID: 0}
+  lastSpawned: {fileID: 0}
+  raycastDebug: 0
+  toolbarInt: 0
+  previousPage: 1
+  pagination: 1
+  showConditions: 1
+  showActions: 1
+  showFallbackActions: 1
+  showLogicHelp: 0
+  showInteractionHelp: 0
+  showMotionHelp: 0
+  showCopyright: 0
+  showActivationEvents: 0
+  renaming: 0
+  loadingSO: 0
+  conditionType: 1
+  actionType: 1
